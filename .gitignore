@@ -39,3 +39,9 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+
+###
+# IDE generated
+###
+.idea
+.vscode
