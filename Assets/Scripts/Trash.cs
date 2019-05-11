@@ -14,13 +14,21 @@ public class Trash
 
     public Type mytype;
     public float spawnTime, pickupTime;
+    private bool isSpawned = false;
     
     /// <summary>
-    /// used for determing when the object has spawned and pickedup
+    /// 
     /// </summary>
-    /// <returns>current time</returns>
-    public float SetTime()
+    public void SetTime()
     {
-        return (Time.time);
+        if (isSpawned)
+        {
+            pickupTime = Time.time - spawnTime;
+        }
+        else if(!isSpawned)
+        {
+            spawnTime = Time.time;
+            isSpawned = true;
+        }
     }
 }
