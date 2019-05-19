@@ -256,13 +256,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0.23799789, y: 0.0064072474, z: -0.0015701005, w: -0.97124326}
-  m_LocalPosition: {x: 4.5245976, y: 8.2892275, z: 0.8569069}
+  m_LocalRotation: {x: -0.21543287, y: 0.0064419033, z: -0.00142124, w: -0.97649634}
+  m_LocalPosition: {x: 4.63, y: 9.87, z: 1.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.882002, y: -0.75600004, z: 0}
 --- !u!1 &1624541169
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 1624541171}
   - component: {fileID: 1624541170}
   - component: {fileID: 1624541175}
+  - component: {fileID: 1624541176}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -297,10 +298,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lanePos:
-  - {x: 2.5, y: 5.26, z: 6}
+  - {x: 3.5, y: 5.26, z: 6}
   - {x: 4.5, y: 5.26, z: 6}
-  - {x: 6.5, y: 5.26, z: 6}
-  currentlane: 1
+  - {x: 5.5, y: 5.26, z: 6}
+  currentLane: 1
   swipeThreshold: 5
 --- !u!65 &1624541171
 BoxCollider:
@@ -368,7 +369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624541169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.568, y: 5.267, z: 5.93}
+  m_LocalPosition: {x: 4.5, y: 5.267, z: 5.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -393,6 +394,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &1624541176
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624541169}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 124
+  m_CollisionDetection: 0
 --- !u!1 &1735096150
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,16 +439,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497c306db79b644bf9d71622a6b4c4d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chanceToSpawn: 75
   spawmLocations:
-  - {x: 5, y: 4}
-  - {x: 2, y: 6}
-  - {x: 7, y: 2}
-  spawnRate: 1
-  basetime: 0
-  trashObject:
-  - {fileID: 4724043224557274569, guid: 48c09a479de9d9267a471c1c4ab22836, type: 3}
-  - {fileID: 6126531987205877415, guid: 27435b7887c5c736f964534b449d78e8, type: 3}
-  - {fileID: 8781255705229836290, guid: 2691ec16dcfda0c1e8f7287a55188eba, type: 3}
+  - {x: 3.5, y: -8, z: 0}
+  - {x: 4.5, y: -8, z: 0}
+  - {x: 5.5, y: -8, z: 0}
+  spawnRate: 2
   world: {fileID: 4580452128566470261}
   worldSpeed: 52.5
 --- !u!4 &1735096152

@@ -5,12 +5,13 @@ public class PlayerController : MonoBehaviour
 	private Animator _animator;
 	[SerializeField] private Vector3[] _lanePos = new Vector3[3];
 	private Vector3 _target;
-	[SerializeField] private Lanes currentlane = Lanes.Middel;
+	[SerializeField] private Lanes currentLane = Lanes.Middel;
 	[SerializeField] private float swipeThreshold;
 
 	private void Start()
 	{
 		_animator = GetComponent<Animator>();
+		_target = _lanePos[1];
 	}
 
 	private void Update()
@@ -29,6 +30,17 @@ public class PlayerController : MonoBehaviour
 				LaneSwitch(false);
 			else if (deltaPosition.x < swipeThreshold) LaneSwitch(true);
 		}
+		
+		#if UNITY_EDITOR
+		if (Input.GetKeyDown(KeyCode.A))
+		{
+			LaneSwitch(true);
+		}
+		else if (Input.GetKeyDown(KeyCode.D))
+		{
+			LaneSwitch(false);	
+		}
+#endif
 	}
 
 	/// <summary>
@@ -37,18 +49,16 @@ public class PlayerController : MonoBehaviour
 	/// <param name="isSwippedLeft"> wich way has there been swiped</param>
 	private void LaneSwitch(bool isSwippedLeft)
 	{
-		var curPos = transform.position;
-
 		// 0 = left
 		// 1 = middel
 		// 2 = right
-		switch (currentlane)
+		switch (currentLane)
 		{
 			case Lanes.Left:
 				if (!isSwippedLeft)
 				{
 					_target = _lanePos[1];
-					currentlane = Lanes.Middel;
+					currentLane = Lanes.Middel;
 				}
 
 				break;
@@ -57,12 +67,12 @@ public class PlayerController : MonoBehaviour
 				if (isSwippedLeft)
 				{
 					_target = _lanePos[0];
-					currentlane = Lanes.Left;
+					currentLane = Lanes.Left;
 				}
 				else if (!isSwippedLeft)
 				{
 					_target = _lanePos[2];
-					currentlane = Lanes.Right;
+					currentLane = Lanes.Right;
 				}
 
 				break;
@@ -71,7 +81,7 @@ public class PlayerController : MonoBehaviour
 				if (isSwippedLeft)
 				{
 					_target = _lanePos[1];
-					currentlane = Lanes.Middel;
+					currentLane = Lanes.Middel;
 				}
 
 				break;
@@ -90,8 +100,8 @@ public class PlayerController : MonoBehaviour
 	private void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.CompareTag("obstacle"))
-			Gamemanager.instance.LifeTracking();
-		else if (col.gameObject.CompareTag("pickup")) Gamemanager.instance.TrashOrderTracking(col.gameObject);
+			Gamemanager.instance.LifeTracking(col.gameObject);
+		else if (col.gameObject.CompareTag("pickup")) Gamemanager.instance.AddTrash(col.gameObject);
 	}
 
 	private enum Lanes

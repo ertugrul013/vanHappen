@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
 public class Trash
 {
 	public enum Type
@@ -12,21 +11,18 @@ public class Trash
 		paper
 	}
 
-	private bool isSpawned;
-
+	private static float startTime;
+	public Guid GUID;
 	public Type mytype;
-	public float spawnTime, pickupTime;
+	public float pickUpTime;
 
 	public void SetTime()
 	{
-		if (isSpawned)
-		{
-			pickupTime = Time.time - spawnTime;
-		}
-		else if (!isSpawned)
-		{
-			spawnTime = Time.time;
-			isSpawned = true;
-		}
+		pickUpTime = Time.time - startTime;
+	}
+
+	public void GetFirstTime(float foo)
+	{
+		startTime = foo + Time.time;
 	}
 }
