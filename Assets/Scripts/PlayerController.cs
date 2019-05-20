@@ -30,16 +30,11 @@ public class PlayerController : MonoBehaviour
 				LaneSwitch(false);
 			else if (deltaPosition.x < swipeThreshold) LaneSwitch(true);
 		}
-		
-		#if UNITY_EDITOR
+
+#if UNITY_EDITOR
 		if (Input.GetKeyDown(KeyCode.A))
-		{
 			LaneSwitch(true);
-		}
-		else if (Input.GetKeyDown(KeyCode.D))
-		{
-			LaneSwitch(false);	
-		}
+		else if (Input.GetKeyDown(KeyCode.D)) LaneSwitch(false);
 #endif
 	}
 

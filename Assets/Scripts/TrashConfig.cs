@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 
 public class TrashConfig : MonoBehaviour
 {
@@ -9,6 +10,21 @@ public class TrashConfig : MonoBehaviour
 	public string test;
 
 	public Trash.Type type;
+
+	private bool isGame2;
+	private void Awake()
+	{
+		isGame2 = false;
+		
+		if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 2) 
+			isGame2 = true;
+	}
+
+	private void Update()
+	{
+		if(!isGame2) return;
+		
+	}
 
 	public Guid Generateuid()
 	{

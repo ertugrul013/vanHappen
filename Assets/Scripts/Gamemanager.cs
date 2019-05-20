@@ -21,11 +21,6 @@ public class Gamemanager : MonoBehaviour
 	//Player settings
 	private int _currentLives = 3;
 
-	//obstacle objects to spawn
-	
-	[SerializeField]
-	private int chanceToSpawn;
-	
 	private GameObject[] _obstacleObjects;
 	private float _sceneSwitchTime;
 
@@ -33,7 +28,11 @@ public class Gamemanager : MonoBehaviour
 	private GameObject[] _trashObject;
 	private float basetime;
 
-	[SerializeField] private Vector3[] spawmLocations = new Vector3[3];
+	//obstacle objects to spawn
+
+	[SerializeField] private int chanceToSpawn;
+
+	[SerializeField] private Transform[] spawmLocations = new Transform[3];
 
 	[Tooltip("time in seconds")] public float spawnRate;
 
@@ -61,8 +60,14 @@ public class Gamemanager : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		WorldSpinning();
-		SpawnObstacles();
+		if (SceneManager.GetActiveScene().buildIndex == 2)
+			SpawnBasedOnTime();
+		else
+		{
+			WorldSpinning();
+			SpawnObstacles();
+		}
+
 	}
 
 	public void LifeTracking(GameObject col)
@@ -90,7 +95,7 @@ public class Gamemanager : MonoBehaviour
 
 	private void WorldSpinning()
 	{
-		world.transform.Rotate(-worldSpeed * Time.deltaTime, 0, 0, Space.Self);
+		world.transform.Rotate(0, worldSpeed * Time.deltaTime, 0, Space.Self);
 	}
 
 
@@ -105,14 +110,14 @@ public class Gamemanager : MonoBehaviour
 		if (k < chanceToSpawn)
 		{
 			var j = Random.Range(0, _trashObject.Length);
-			var obs = Instantiate(_trashObject[j], spawmLocations[i], Quaternion.identity);
+			var obs = Instantiate(_trashObject[j], spawmLocations[i].position, Quaternion.identity);
 			obs.transform.SetParent(world.transform, true);
 			TrashSpawn(obs);
 		}
 		else if (k > chanceToSpawn)
 		{
 			var j = Random.Range(0, _obstacleObjects.Length);
-			var obs = Instantiate(_obstacleObjects[j], spawmLocations[i], Quaternion.identity);
+			var obs = Instantiate(_obstacleObjects[j], spawmLocations[i].position, Quaternion.identity);
 			obs.transform.SetParent(world.transform, true);
 		}
 		else
@@ -128,7 +133,7 @@ public class Gamemanager : MonoBehaviour
 	{
 		var allObj = Resources.LoadAll("TrashPrefabs/", typeof(GameObject));
 		_trashObject = new GameObject[allObj.Length];
-		
+
 		foreach (GameObject obj in allObj)
 		{
 			var uid = obj.GetComponent<TrashConfig>().Generateuid();
@@ -159,6 +164,10 @@ public class Gamemanager : MonoBehaviour
 		var curTrashObject = trashObjects[curTrash.GUID];
 
 		if (curTrash.pickUpTime <= Time.time - _sceneSwitchTime)
-			Instantiate(curTrashObject, new Vector3(0, 0, 0), Quaternion.identity);
+		{
+			GameObject i;
+			i = Instantiate(curTrashObject, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+			i.AddComponent<Rigidbody>().useGravity = true;
+		}
 	}
 }
