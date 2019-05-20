@@ -17,7 +17,11 @@ public class PipeController : MonoBehaviour
     [SerializeField] private GameObject[] belts = new GameObject[3];
 
     [SerializeField] private TypeOfBelts currentSelectedBelt;
-
+    
+    private Quaternion Pos1,Pos2;
+    public float rotationDegreesPerSecond = 45f;
+    public float rotationDegreesAmount = 15f;
+    private float totalRotation = 0;
         // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +41,7 @@ public class PipeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D))
         {
             SetBeltDir();
+            Debug.Log("hoi");
         }
 #endif
         
@@ -52,44 +57,40 @@ public class PipeController : MonoBehaviour
 
     void SetBeltDir()
     {
-        switch (currentSelectedBelt)
+        if (currentSelectedBelt == TypeOfBelts.Top)
         {
-            case TypeOfBelts.Top:
-                if (_topBeltDir == BeltDir.Left)
-                {
-                    belts[0].transform.lo
-                }
-
-                break;
-            case TypeOfBelts.BotLeft:
-                switch (_botLeftBeltDir)
-                {
-                    case BeltDir.Left:
-                        break;
-                    case BeltDir.Right:
-                        break;
-                }
-
-                break;
-            case TypeOfBelts.BotRight:
-                switch (_botRightBeltDir)
-                {
-                    case BeltDir.Left:
-                        break;
-                    case BeltDir.Right:
-                        break;
-                }
-                break;
-            default:
-                break;
+            
         }
- 
+        else if (currentSelectedBelt == TypeOfBelts.BotLeft)
+        {
+        }
+        else if (currentSelectedBelt == TypeOfBelts.BotRight)
+        {
+        }
     }
+    
 
     public void SetBelt(int _enum)
     {
         currentSelectedBelt = (TypeOfBelts)_enum;
         Debug.Log(currentSelectedBelt);
+    }
+
+    void SetBeltPos()
+    {
+        var a = new Vector3(0,0,-15);
+        var b = new Vector3(0,0,15);
+        
+        Pos1 = Quaternion.Euler(a);
+        Pos2 = Quaternion.Euler(b);
+    }
+
+    void SetBeltRotation(Quaternion target)
+    { 
+        Debug.Log("here");
+        belts[0].transform.rotation = Quaternion.Lerp(belts[0].transform.rotation,target,Time.deltaTime * 1);
+        belts[1].transform.rotation = Quaternion.Lerp(belts[1].transform.rotation,target,Time.deltaTime * 1);
+        belts[2].transform.rotation = Quaternion.Lerp(belts[1].transform.rotation,target,Time.deltaTime * 1);
     }
 
     private enum BeltDir

@@ -99,7 +99,7 @@ public class Gamemanager : MonoBehaviour
 		spawnRate -= 1 * Time.deltaTime;
 
 		if (!(spawnRate <= 0)) return;
-		var k = Random.Range(0, 101);
+		var k = Random.Range(0, 200);
 		var i = Random.Range(0, spawmLocations.Length);
 
 		if (k < chanceToSpawn)
