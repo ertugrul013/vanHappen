@@ -27,7 +27,7 @@ public class PipeController : MonoBehaviour
 
 	private void GetInput()
 	{
-#if UNITY_EDITOR
+
 		if (Input.GetKeyDown(KeyCode.A))
 		{
 			if (currentSelectedBelt == TypeOfBelts.Top)
@@ -48,8 +48,8 @@ public class PipeController : MonoBehaviour
 
 			_beltConfigs[(int) currentSelectedBelt].target = Pos2;
 		}
-#endif
 
+		#if PLATFORM_ANDROID
 
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
 		{
@@ -60,6 +60,7 @@ public class PipeController : MonoBehaviour
 
 			else if (deltaPosition.x < swipeThreshold) _beltConfigs[(int) currentSelectedBelt].target = Pos2;
 		}
+		#endif
 	}
 
 	public void SetBelt(int _enum)

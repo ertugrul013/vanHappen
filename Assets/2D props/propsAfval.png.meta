@@ -2,12 +2,13 @@ fileFormatVersion: 2
 guid: 2cbd3b1fe4b0f4f8090286b536b204cb
 TextureImporter:
   fileIDToRecycleName:
+    8900000: generatedCubemap
     21300000: propsAfval_0
     21300002: propsAfval_1
     21300004: propsAfval_2
     21300006: propsAfval_3
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -24,18 +25,20 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
-  seamlessCubemap: 0
+  seamlessCubemap: 1
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
-    mipBias: -1
+    aniso: 1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: -1
@@ -82,6 +85,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -89,7 +103,7 @@ TextureImporter:
       name: propsAfval_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 16
         y: 616
         width: 450
         height: 400
@@ -100,7 +114,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96128b32617ff493a8f77dabe53ec946
+      spriteID: 78820181a012c7c1bab5797ff965c17e
       vertices: []
       indices: 
       edges: []
@@ -110,9 +124,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 552
-        y: 616
+        y: 617
         width: 454
-        height: 381
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,7 +134,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6da1cff4f95847b5806dda599d90911
+      spriteID: bee01de7a440853898d5f5ec37242fbc
       vertices: []
       indices: 
       edges: []
@@ -131,7 +145,7 @@ TextureImporter:
         serializedVersion: 2
         x: 5
         y: 315
-        width: 519
+        width: 518
         height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43df822bf203d4d50a81ea63a8dc7643
+      spriteID: 0bba2ad3a128b9e759b2c1a4fb914a31
       vertices: []
       indices: 
       edges: []
@@ -151,8 +165,8 @@ TextureImporter:
         serializedVersion: 2
         x: 548
         y: 296
-        width: 466
-        height: 296
+        width: 465
+        height: 294
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,7 +174,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e2cb114d90e8419abbc826bf5bd5af0
+      spriteID: 05fc37b36711a599b87c7b233894de10
       vertices: []
       indices: 
       edges: []
@@ -174,6 +188,8 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

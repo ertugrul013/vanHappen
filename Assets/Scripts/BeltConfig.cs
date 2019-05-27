@@ -3,18 +3,13 @@ using UnityEngine;
 
 public class BeltConfig : MonoBehaviour
 {
-	private static readonly float Speed = 1;
-	private readonly ConveyerBelt _conveyerBelt = new ConveyerBelt();
+	private const float Speed = 1.5f;
 	public Quaternion target;
 	public Transform endPoint;
-	public void Start()
-	{
-		_conveyerBelt._ThisGameObject = gameObject;
-	}
-
+	
 	private void Update()
 	{
-		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * Speed);
+		transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime * Speed);
 	}
 
 	private void OnTriggerStay(Collider other)

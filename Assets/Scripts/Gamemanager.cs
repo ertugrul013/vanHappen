@@ -10,13 +10,13 @@ public class Gamemanager : MonoBehaviour
 	public static Gamemanager instance;
 
 	//Spawning
-	private readonly Trash _trash = new Trash();
+	private Trash _trash = new Trash();
 
 	//keeps track of all the different objects that can been spawn
-	private readonly Dictionary<Guid, GameObject> trashObjects = new Dictionary<Guid, GameObject>();
+	private  Dictionary<Guid, GameObject> trashObjects = new Dictionary<Guid, GameObject>();
 
 	//the queue of witch the trash has come in
-	private readonly Queue<Trash> TrashQueue = new Queue<Trash>();
+	private  Queue<Trash> TrashQueue = new Queue<Trash>();
 
 	//Player settings
 	private int _currentLives = 3;
@@ -33,6 +33,7 @@ public class Gamemanager : MonoBehaviour
 	[SerializeField] private int chanceToSpawn;
 
 	[SerializeField] private Transform[] spawmLocations = new Transform[3];
+	public Vector3 spawnpoint2;
 
 	[Tooltip("time in seconds")] public float spawnRate;
 
@@ -49,8 +50,8 @@ public class Gamemanager : MonoBehaviour
 			DontDestroyOnLoad(this);
 			basetime = spawnRate;
 			_trash.GetFirstTime(spawnRate);
-			GetTrashObjects();
-			GetObstacleObjects();
+			SetTrashObjects();
+			SetObstacleObjects();
 		}
 		else
 		{
@@ -61,10 +62,14 @@ public class Gamemanager : MonoBehaviour
 	private void FixedUpdate()
 	{
 		if (SceneManager.GetActiveScene().buildIndex == 2)
-			SpawnBasedOnTime();
+		{
+			//Debug.Log("spawning");
+			//SpawnBasedOnTime();
+			TempSpawn();
+		}
 		else
 		{
-			WorldSpinning();
+			SpinWorld();
 			SpawnObstacles();
 		}
 
@@ -80,20 +85,21 @@ public class Gamemanager : MonoBehaviour
 		_sceneSwitchTime = Time.time;
 	}
 
-	private void TrashSpawn(GameObject t)
+	private void TrashSetTime(GameObject t)
 	{
 		t.GetComponent<TrashConfig>()._trash.SetTime();
 	}
 
-	public void AddTrash(GameObject t)
+	public void AddTrash(TrashConfig t)
 	{
 		var x = t.GetComponent<TrashConfig>();
 		x._trash.SetTime();
 		TrashQueue.Enqueue(x._trash);
+		Debug.Log("adding trash");
 		Destroy(t);
 	}
 
-	private void WorldSpinning()
+	private void SpinWorld()
 	{
 		world.transform.Rotate(0, worldSpeed * Time.deltaTime, 0, Space.Self);
 	}
@@ -112,7 +118,7 @@ public class Gamemanager : MonoBehaviour
 			var j = Random.Range(0, _trashObject.Length);
 			var obs = Instantiate(_trashObject[j], spawmLocations[i].position, Quaternion.identity);
 			obs.transform.SetParent(world.transform, true);
-			TrashSpawn(obs);
+			TrashSetTime(obs);
 		}
 		else if (k > chanceToSpawn)
 		{
@@ -123,13 +129,13 @@ public class Gamemanager : MonoBehaviour
 		else
 		{
 			Debug.LogError("Object index out of range");
-			EditorApplication.isPlaying = false;
+			//EditorApplication.isPlaying = false;
 		}
 
 		spawnRate += basetime;
 	}
 
-	private void GetTrashObjects()
+	private void SetTrashObjects()
 	{
 		var allObj = Resources.LoadAll("TrashPrefabs/", typeof(GameObject));
 		_trashObject = new GameObject[allObj.Length];
@@ -144,7 +150,7 @@ public class Gamemanager : MonoBehaviour
 		for (var i = 0; i < allObj.Length; i++) _trashObject[i] = allObj[i] as GameObject;
 	}
 
-	private void GetObstacleObjects()
+	private void SetObstacleObjects()
 	{
 		//load the assets in
 		var allObs = Resources.LoadAll("ObstaclesPrefabs/", typeof(GameObject));
@@ -158,8 +164,13 @@ public class Gamemanager : MonoBehaviour
 
 	private void SpawnBasedOnTime()
 	{
+		Debug.Log("Hello");
 		//dequeue the next trash object
 		var curTrash = TrashQueue.Dequeue();
+		if (curTrash == null)
+		{
+			Debug.LogError("No object had been picked up");
+		}
 		//get the right GameObject to spawn
 		var curTrashObject = trashObjects[curTrash.GUID];
 
@@ -169,5 +180,29 @@ public class Gamemanager : MonoBehaviour
 			i = Instantiate(curTrashObject, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
 			i.AddComponent<Rigidbody>().useGravity = true;
 		}
+	}
+
+	private Transform pos()
+	{
+		return GameObject.Find("spawnpos").transform;
+	}
+
+	/// <summary>
+	/// this is used to fake the trash spawning
+	/// </summary>
+	private void TempSpawn()
+	{
+		spawnRate -= 1 * Time.deltaTime;
+		if (!(spawnRate <= 0)) return;
+		var i = Random.Range(0, _trashObject.Length);
+
+		var obj = Instantiate(_trashObject[i], spawnpoint2, Quaternion.identity) as GameObject;
+		
+		obj.transform.localScale = new Vector3(0.09f,0.09f,0.09f);
+		
+		obj.AddComponent<Rigidbody>();
+
+		spawnRate += basetime;
+		//obj.AddComponent<FixedJoint>().;
 	}
 }

@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
 	private void GetSwipe()
 	{
+		#if PLATFORM_ANDROID 
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
 		{
 			var deltaPosition = Input.GetTouch(0).deltaPosition;
@@ -30,12 +31,12 @@ public class PlayerController : MonoBehaviour
 				LaneSwitch(false);
 			else if (deltaPosition.x < swipeThreshold) LaneSwitch(true);
 		}
-
-#if UNITY_EDITOR
+		#endif
+		
 		if (Input.GetKeyDown(KeyCode.A))
 			LaneSwitch(true);
 		else if (Input.GetKeyDown(KeyCode.D)) LaneSwitch(false);
-#endif
+
 	}
 
 	/// <summary>
