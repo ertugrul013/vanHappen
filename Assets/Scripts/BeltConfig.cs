@@ -17,4 +17,5 @@ public class BeltConfig : MonoBehaviour
 		other.transform.position =
 			Vector3.MoveTowards(other.transform.position, endPoint.position, Speed  * Time.deltaTime);
 	}
+	
 }

@@ -87,10 +87,12 @@ public class Gamemanager : MonoBehaviour
 
 	private void TrashSetTime(GameObject t)
 	{
-		t.GetComponent<TrashConfig>()._trash.SetTime();
+		var x = t.GetComponent<TrashConfig>();
+		x._trash.SetTime();
+		Debug.Log(_trash.pickUpTime);
 	}
 
-	public void AddTrash(TrashConfig t)
+	public void AddTrash(GameObject t)
 	{
 		var x = t.GetComponent<TrashConfig>();
 		x._trash.SetTime();
