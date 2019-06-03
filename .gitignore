@@ -45,3 +45,8 @@ Thumbs.db
 ###
 .idea
 .vscode
+
+###
+#server
+###
+node_modules/
