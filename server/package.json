@@ -1,0 +1,14 @@
+{
+  "name": "SocketApp",
+  "version": "1.0.0",
+  "description": "Node.js Socket server for unity",
+  "author": "Ertugrul Yesil <ertugrul013@hotmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "socket.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "ws": "^7.0.0"
+  }
+}
