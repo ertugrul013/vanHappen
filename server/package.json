@@ -5,10 +5,10 @@
   "author": "Ertugrul Yesil <ertugrul013@hotmail.com>",
   "main": "server.js",
   "scripts": {
-    "start": "socket.js"
+    "start": "server.js"
   },
   "dependencies": {
-    "express": "^4.16.1",
-    "ws": "^7.0.0"
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
   }
 }
