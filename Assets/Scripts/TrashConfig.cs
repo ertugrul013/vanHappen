@@ -22,8 +22,7 @@ public class TrashConfig : MonoBehaviour
 
 	private void Update()
 	{
-		if(!isGame2) return;
-		
+		this.transform.forward = -Camera.main.transform.forward;		
 	}
 
 	public Guid Generateuid()
