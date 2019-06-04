@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 
 public class ConveyerBelt
 {
@@ -17,4 +18,4 @@ public class ConveyerBelt
 		return rotation.z <= -15f ? Dirs.Left :
 			rotation.z >= 15f ? Dirs.Right : Dirs.Moving;
 	}
-}
+}*/

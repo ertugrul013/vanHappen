@@ -3,15 +3,10 @@ using UnityEngine;
 
 public class BeltConfig : MonoBehaviour
 {
-	private static readonly float Speed = 1;
-	private readonly ConveyerBelt _conveyerBelt = new ConveyerBelt();
+	private const float Speed = 1.5f;
 	public Quaternion target;
 	public Transform endPoint;
-	public void Start()
-	{
-		_conveyerBelt._ThisGameObject = gameObject;
-	}
-
+	
 	private void Update()
 	{
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, target, Time.deltaTime * 50);
@@ -22,4 +17,5 @@ public class BeltConfig : MonoBehaviour
 		other.transform.position =
 			Vector3.MoveTowards(other.transform.position, endPoint.position, (Speed  * Time.deltaTime)/2);
 	}
+	
 }

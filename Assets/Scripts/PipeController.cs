@@ -50,6 +50,7 @@ public class PipeController : MonoBehaviour
         }
 #endif
 
+		#if PLATFORM_ANDROID
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
