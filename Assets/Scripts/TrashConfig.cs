@@ -22,7 +22,7 @@ public class TrashConfig : MonoBehaviour
 
 	private void Update()
 	{
-		this.transform.forward = -Camera.main.transform.forward;		
+		//this.transform.LookAt( -Camera.main.transform.forward);		
 	}
 
 	public Guid Generateuid()

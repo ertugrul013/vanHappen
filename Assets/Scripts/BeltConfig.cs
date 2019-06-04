@@ -14,12 +14,12 @@ public class BeltConfig : MonoBehaviour
 
 	private void Update()
 	{
-		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * Speed);
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, target, Time.deltaTime * 50);
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
 		other.transform.position =
-			Vector3.MoveTowards(other.transform.position, endPoint.position, Speed  * Time.deltaTime);
+			Vector3.MoveTowards(other.transform.position, endPoint.position, (Speed  * Time.deltaTime)/2);
 	}
 }
