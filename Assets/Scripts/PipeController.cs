@@ -78,6 +78,7 @@ public class PipeController : MonoBehaviour
                 _beltConfigs[(int)currentSelectedBelt].target = Pos2;
             }
         }
+		#endif
 	}
         public void SetBelt(int _enum)
         {
