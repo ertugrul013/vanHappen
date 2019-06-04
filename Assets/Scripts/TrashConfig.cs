@@ -9,6 +9,15 @@ public class TrashConfig : MonoBehaviour
 
 	public float debug;
 
+	public bool isGame2;
+
+	private void Update()
+	{
+		if (!isGame2)
+		{
+			this.transform.forward = -Camera.main.transform.forward;	
+		}
+	}
 	public Trash.Type type;
 
 	public Guid Generateuid()
