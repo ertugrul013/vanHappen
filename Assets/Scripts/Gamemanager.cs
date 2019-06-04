@@ -61,7 +61,7 @@ public class Gamemanager : MonoBehaviour
     private void FixedUpdate()
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
-            SpawnBasedOnTime();
+        { SpawnBasedOnTime(); }
         else
         {
             WorldSpinning();
@@ -175,5 +175,10 @@ public class Gamemanager : MonoBehaviour
             i = Instantiate(curTrashObject, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
             i.AddComponent<Rigidbody>().useGravity = true;
         }
+    }
+
+    private void test()
+    {
+
     }
 }
