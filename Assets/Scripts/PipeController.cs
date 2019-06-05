@@ -61,22 +61,22 @@ public class PipeController : MonoBehaviour
             {
                 if (currentSelectedBelt == TypeOfBelts.Top)
                 {
-                    _beltConfigs[(int)currentSelectedBelt].target = Pos1Top;
+                    _beltConfigs[(int)currentSelectedBelt].target = Pos2Top;
                     return;
                 }
 
-                _beltConfigs[(int)currentSelectedBelt].target = Pos1;
+                _beltConfigs[(int)currentSelectedBelt].target = Pos2;
             }
 
             else if (deltaPosition.x < swipeThreshold)
             {
                 if (currentSelectedBelt == TypeOfBelts.Top)
                 {
-                    _beltConfigs[(int)currentSelectedBelt].target = Pos2Top;
+                    _beltConfigs[(int)currentSelectedBelt].target = Pos1Top;
                     return;
                 }
 
-                _beltConfigs[(int)currentSelectedBelt].target = Pos2;
+                _beltConfigs[(int)currentSelectedBelt].target = Pos1;
             }
         }
 		#endif
