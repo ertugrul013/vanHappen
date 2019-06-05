@@ -25,6 +25,7 @@ public class PipeController : MonoBehaviour
         GetInput();
     }
 
+
     private void GetInput()
     {
 #if UNITY_EDITOR
@@ -51,9 +52,9 @@ public class PipeController : MonoBehaviour
 #endif
 
 		#if PLATFORM_ANDROID
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
+        /// checks if screeen is being touched and if the touch pos has moved
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {   
             var deltaPosition = Input.GetTouch(0).deltaPosition;
 
             if (deltaPosition.x > swipeThreshold)
@@ -78,6 +79,7 @@ public class PipeController : MonoBehaviour
                 _beltConfigs[(int)currentSelectedBelt].target = Pos2;
             }
         }
+		#endif
 	}
         public void SetBelt(int _enum)
         {
