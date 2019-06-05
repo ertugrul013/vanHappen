@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3917255001159366270}
   - component: {fileID: 3925104473239575700}
   - component: {fileID: 6634330552329574117}
+  - component: {fileID: 4678130492554228686}
   m_Layer: 0
   m_Name: Molshoop
   m_TagString: obstacle
@@ -89,5 +90,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.066738, y: 1.0363331, z: 2.05643}
-  m_Center: {x: -0.033368655, y: 0.43289006, z: 0.05947575}
+  m_Size: {x: 1.4557189, y: 1.0363331, z: 1.5569335}
+  m_Center: {x: 0.08969687, y: 0.43289003, z: 0.096313804}
+--- !u!114 &4678130492554228686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902783249192287138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff9d6d371bb53396866b001e181ae8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacle:
+    myType: 1
+    offsetY: -8.7

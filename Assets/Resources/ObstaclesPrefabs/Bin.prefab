@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2779479081798427842}
   - component: {fileID: 2789863497796320502}
   - component: {fileID: 7064201029818695959}
+  - component: {fileID: 3460032568153867859}
   m_Layer: 0
   m_Name: Bin
   m_TagString: obstacle
@@ -89,5 +90,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.494017, y: 12.756329, z: 9.029346}
-  m_Center: {x: 0.00000023841858, y: 0, z: 0}
+  m_Size: {x: 7.3139277, y: 10.676418, z: 9.029346}
+  m_Center: {x: -0.061470088, y: -1.039957, z: -7.960529e-15}
+--- !u!114 &3460032568153867859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801657021475806012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff9d6d371bb53396866b001e181ae8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacle:
+    myType: 0
+    offsetY: 1.05

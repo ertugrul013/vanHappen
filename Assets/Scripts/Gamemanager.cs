@@ -120,7 +120,7 @@ public class Gamemanager : MonoBehaviour
             else if (k > chanceToSpawn)
             {
                 var j = Random.Range(0, _obstacleObjects.Length);
-                var obs = Instantiate(_obstacleObjects[j], spawmLocations[i].position, Quaternion.identity);
+                var obs = Instantiate(_obstacleObjects[j], spawmLocations[i].position, Quaternion.identity * Quaternion.Euler(295,0,0));
                 obs.transform.SetParent(world.transform, true);
             }
 
