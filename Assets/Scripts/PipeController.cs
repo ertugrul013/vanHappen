@@ -28,7 +28,6 @@ public class PipeController : MonoBehaviour
 
     private void GetInput()
     {
-#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.A))
         {
             if (currentSelectedBelt == TypeOfBelts.Top)
@@ -49,7 +48,6 @@ public class PipeController : MonoBehaviour
 
             _beltConfigs[(int)currentSelectedBelt].target = Pos2;
         }
-#endif
 
 		#if PLATFORM_ANDROID
         /// checks if screeen is being touched and if the touch pos has moved
