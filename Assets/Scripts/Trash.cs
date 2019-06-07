@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+[Serializable]
 public class Trash
 {
 	public enum Type
@@ -15,6 +16,8 @@ public class Trash
 	public Guid GUID;
 	public Type mytype;
 	public float pickUpTime;
+
+	public int amountOfScore;
 
 	public void SetTime()
 	{

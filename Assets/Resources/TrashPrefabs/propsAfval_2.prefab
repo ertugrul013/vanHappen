@@ -93,8 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03638fc7313aa39298ebbbf8c5f1fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 685376d4-bb72-4d0f-a786-ae2994428ba5
-  type: 1
+  _trash:
+    mytype: 1
+    pickUpTime: 0
+    amountOfScore: 20
+  isGame2: 0
 --- !u!65 &6845561191313635271
 BoxCollider:
   m_ObjectHideFlags: 0
