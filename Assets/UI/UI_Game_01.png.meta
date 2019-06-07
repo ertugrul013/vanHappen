@@ -12,6 +12,7 @@ TextureImporter:
     21300014: UI_Game_01_7
     21300016: UI_Game_01_8
     21300018: UI_Game_01_9
+    21300020: UI_Game_01_10
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -113,7 +114,7 @@ TextureImporter:
         width: 944
         height: 329
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,7 +134,7 @@ TextureImporter:
         width: 284
         height: 266
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,7 +154,7 @@ TextureImporter:
         width: 295
         height: 267
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +174,7 @@ TextureImporter:
         width: 296
         height: 267
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,11 +190,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1586
-        y: 1097
-        width: 574
-        height: 796
+        y: 1461
+        width: 477
+        height: 412
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,7 +214,7 @@ TextureImporter:
         width: 5
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,12 +229,12 @@ TextureImporter:
       name: UI_Game_01_6
       rect:
         serializedVersion: 2
-        x: 10
+        x: 17
         y: 1544
         width: 944
         height: 330
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,12 +249,12 @@ TextureImporter:
       name: UI_Game_01_7
       rect:
         serializedVersion: 2
-        x: 1006
+        x: 1003
         y: 1461
         width: 477
         height: 412
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,7 +274,7 @@ TextureImporter:
         width: 708
         height: 394
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -293,7 +294,7 @@ TextureImporter:
         width: 1912
         height: 780
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -20,6 +20,7 @@ public class Gamemanager : MonoBehaviour
 
     //Player settings
     private int _currentLives = 3;
+    private int _score;
 
     private GameObject[] _obstacleObjects;
     private float _sceneSwitchTime;
@@ -61,7 +62,9 @@ public class Gamemanager : MonoBehaviour
     private void FixedUpdate()
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
-        { SpawnBasedOnTime(); }
+        {
+            SpawnBasedOnTime();
+        }
         else
         {
             WorldSpinning();
@@ -74,7 +77,7 @@ public class Gamemanager : MonoBehaviour
     {
         _currentLives--;
         Destroy(col);
-        Debug.Log(_currentLives);
+        UIController.instance.SetLifeUI(_currentLives);
         if (_currentLives == 0)
         {
             SceneManager.LoadScene(2);
@@ -82,16 +85,15 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
-    private void TrashSpawn(GameObject t)
-    {
-        t.GetComponent<TrashConfig>()._trash.SetTime();
-    }
+    private void TrashSpawn(GameObject t) => t.GetComponent<TrashConfig>()._trash.SetTime();
 
     public void AddTrash(GameObject t)
     {
-        var x = t.GetComponent<TrashConfig>();
-        x._trash.SetTime();
-        TrashQueue.Enqueue(x._trash);
+        var x = t.GetComponent<TrashConfig>()._trash;
+        x.SetTime();
+        TrashQueue.Enqueue(x);
+        _score += x.amountOfScore;
+        UIController.instance.setScoreText(_score);
         Destroy(t);
     }
 
@@ -120,7 +122,7 @@ public class Gamemanager : MonoBehaviour
             else if (k > chanceToSpawn)
             {
                 var j = Random.Range(0, _obstacleObjects.Length);
-                var obs = Instantiate(_obstacleObjects[j], spawmLocations[i].position, Quaternion.identity * Quaternion.Euler(295,0,0));
+                var obs = Instantiate(_obstacleObjects[j], spawmLocations[i].position, Quaternion.identity * Quaternion.Euler(295, 0, 0));
                 obs.transform.SetParent(world.transform, true);
             }
 
