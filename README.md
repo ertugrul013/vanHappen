@@ -64,7 +64,7 @@ If you separate too much waste into the wrong bin, it will be hidden and you wil
 
 - [ ] NodeJS websockets.
 - [ ] Trash based on pickup time.
-- [ ] UI scaling for mobile devices
+- [x] UI scaling for mobile devices
 - [ ] Play Store publishmed.
 - [ ] PC release.
 - [ ] Particle System.
