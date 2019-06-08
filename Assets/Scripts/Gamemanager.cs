@@ -178,9 +178,4 @@ public class Gamemanager : MonoBehaviour
             i.AddComponent<Rigidbody>().useGravity = true;
         }
     }
-
-    private void test()
-    {
-
-    }
 }

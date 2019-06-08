@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	private Animator _animator;
+	[SerializeField] private Animator _animatorGun;
+	[SerializeField] private Animator _animatorPlayer;
 	[SerializeField] private Vector3[] _lanePos = new Vector3[3];
 	private Vector3 _target;
 	[SerializeField] private Lanes currentLane = Lanes.Middel;
@@ -10,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
 	private void Start()
 	{
-		_animator = GetComponent<Animator>();
 		_target = _lanePos[1];
 	}
 
@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
 				{
 					_target = _lanePos[1];
 					currentLane = Lanes.Middel;
+					_animatorGun.SetTrigger("right");
+					_animatorPlayer.SetTrigger("right");
 				}
 
 				break;
@@ -64,11 +66,15 @@ public class PlayerController : MonoBehaviour
 				{
 					_target = _lanePos[0];
 					currentLane = Lanes.Left;
+					_animatorGun.SetTrigger("left");
+					_animatorPlayer.SetTrigger("left");
 				}
 				else if (!isSwippedLeft)
 				{
 					_target = _lanePos[2];
 					currentLane = Lanes.Right;
+					_animatorGun.SetTrigger("right");
+					_animatorPlayer.SetTrigger("right");
 				}
 
 				break;
@@ -78,6 +84,8 @@ public class PlayerController : MonoBehaviour
 				{
 					_target = _lanePos[1];
 					currentLane = Lanes.Middel;
+					_animatorGun.SetTrigger("left");
+					_animatorPlayer.SetTrigger("left");
 				}
 
 				break;
@@ -90,7 +98,7 @@ public class PlayerController : MonoBehaviour
 	/// <param name="index">Name of the bool to set to false</param>
 	public void AnimExit(string index)
 	{
-		_animator.SetBool(index, false);
+		//_animator.SetBool(index, false);
 	}
 
 	private void OnCollisionEnter(Collision col)
