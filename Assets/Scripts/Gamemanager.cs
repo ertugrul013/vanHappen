@@ -1,13 +1,17 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+using TMPro;
 
 public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager instance;
+
+    [SerializeField] private TextMeshProUGUI countdownText;
 
     //Spawning
     private readonly Trash _trash = new Trash();
@@ -42,7 +46,16 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] [Range(20, 70)] private float worldSpeed;
 
 
-    private void Awake()
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        StartCoroutine(StartupDelay());
+    }
+
+    private void StartGame()
     {
         if (instance == null)
         {
@@ -177,5 +190,25 @@ public class Gamemanager : MonoBehaviour
             i = Instantiate(curTrashObject, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
             i.AddComponent<Rigidbody>().useGravity = true;
         }
+    }
+
+    IEnumerator StartupDelay()
+    {
+        Time.timeScale = 0;
+        UIController.instance.isPaused = true;
+        var timer = 4f;
+        float pauseTime = Time.realtimeSinceStartup + timer;
+        while (Time.realtimeSinceStartup < pauseTime)
+        {
+            yield return new WaitForSecondsRealtime(1f);
+            timer--;
+            countdownText.SetText(timer.ToString());
+
+        }
+        Time.timeScale = 1;
+        countdownText.SetText("");
+        UIController.instance.isPaused = false;
+        StartGame();
+        yield break;
     }
 }

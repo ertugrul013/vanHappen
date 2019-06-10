@@ -5,7 +5,6 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-
     public static UIController instance;
 
     [Header("Life images")]
@@ -15,7 +14,7 @@ public class UIController : MonoBehaviour
     [Header("pause control")]
     [SerializeField] private Image pausePlayButt;
     [SerializeField] private Sprite[] StateSprite = new Sprite[2];
-    private bool isPaused;
+    public bool isPaused;
 
     [Space]
     [Header("Score control")]
@@ -26,7 +25,7 @@ public class UIController : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        isPaused = true;
+        isPaused = false;
         instance = this;
     }
 

@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
 	private void Update()
 	{
 		GetSwipe();
-		transform.position = Vector3.Lerp(transform.position, _target, 0.25f);
+		if(!UIController.instance.isPaused)
+			transform.position = Vector3.Lerp(transform.position, _target, 0.25f);
 	}
 
 	private void GetSwipe()
