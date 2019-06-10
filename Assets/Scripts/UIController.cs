@@ -25,7 +25,6 @@ public class UIController : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        isPaused = false;
         instance = this;
     }
 
@@ -33,10 +32,7 @@ public class UIController : MonoBehaviour
     /// switches scene to the index corresponding to the build settings
     /// </summary>
     /// <param name="index">build settings corresponding to the index of the scene you wan't to switch to</param>
-    public void LoadScene(int index)
-    {
-        SceneManager.LoadScene(index);
-    }
+    public void LoadScene(int index) => SceneManager.LoadScene(index);
 
     /// <TO-DO>
     /// Check with Elysa(main 2D artist) if the health icons can be reduced to
@@ -52,12 +48,12 @@ public class UIController : MonoBehaviour
     /// </summary>
     public void Pause()
     {
-        if (isPaused)
+        if (!isPaused)
         {
             pausePlayButt.sprite = StateSprite[0];
             Time.timeScale = 0;
         }
-        else if (!isPaused)
+        else if (isPaused)
         {
             pausePlayButt.sprite = StateSprite[1];
             Time.timeScale = 1;

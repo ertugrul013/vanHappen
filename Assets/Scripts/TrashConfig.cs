@@ -28,4 +28,12 @@ public class TrashConfig : MonoBehaviour
 
         return GUID;
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("wall"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

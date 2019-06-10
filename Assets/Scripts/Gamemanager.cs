@@ -82,6 +82,13 @@ public class Gamemanager : MonoBehaviour
         {
             WorldSpinning();
             SpawnObstacles();
+            worldSpeed += Time.deltaTime / 2;
+            //sets a limit of how fast the object can spawn
+            if (basetime > 0.5f)
+            {
+                basetime -= Time.deltaTime / 25;
+            }
+            
         }
 
     }
@@ -143,7 +150,7 @@ public class Gamemanager : MonoBehaviour
             else
             {
                 Debug.LogError("Object index out of range");
-                EditorApplication.isPlaying = false;
+                //EditorApplication.isPlaying = false;
             }
 #endif
             spawnRate += basetime;

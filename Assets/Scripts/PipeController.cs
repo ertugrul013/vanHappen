@@ -16,7 +16,7 @@ public class PipeController : MonoBehaviour
     private void Start()
     {
         currentSelectedBelt = TypeOfBelts.Top;
-        SetBeltPos();
+        GetBeltPos();
     }
 
     // Update is called once per frame
@@ -30,6 +30,7 @@ public class PipeController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
+            _beltConfigs[(int)currentSelectedBelt].sound.Play();
             if (currentSelectedBelt == TypeOfBelts.Top)
             {
                 _beltConfigs[(int)currentSelectedBelt].target = Pos1Top;
@@ -40,6 +41,7 @@ public class PipeController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
+            _beltConfigs[(int)currentSelectedBelt].sound.Play();
             if (currentSelectedBelt == TypeOfBelts.Top)
             {
                 _beltConfigs[(int)currentSelectedBelt].target = Pos2Top;
@@ -57,6 +59,7 @@ public class PipeController : MonoBehaviour
 
             if (deltaPosition.x > swipeThreshold)
             {
+                _beltConfigs[(int)currentSelectedBelt].sound.Play();
                 if (currentSelectedBelt == TypeOfBelts.Top)
                 {
                     _beltConfigs[(int)currentSelectedBelt].target = Pos2Top;
@@ -68,6 +71,7 @@ public class PipeController : MonoBehaviour
 
             else if (deltaPosition.x < swipeThreshold)
             {
+                _beltConfigs[(int)currentSelectedBelt].sound.Play();
                 if (currentSelectedBelt == TypeOfBelts.Top)
                 {
                     _beltConfigs[(int)currentSelectedBelt].target = Pos1Top;
@@ -84,7 +88,7 @@ public class PipeController : MonoBehaviour
             currentSelectedBelt = (TypeOfBelts)_enum;
         }
 
-        private void SetBeltPos()
+        private void GetBeltPos()
         {
             var a = new Vector3(0, 11, 0);
             var b = new Vector3(0, -11, 0);

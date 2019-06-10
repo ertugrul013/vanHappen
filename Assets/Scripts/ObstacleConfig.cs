@@ -14,4 +14,12 @@ public class ObstacleConfig : MonoBehaviour
    {
        transform.position = new Vector3(transform.position.x,transform.position.y + _obstacle.offsetY,transform.position.z);
    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("wall"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
