@@ -52,11 +52,13 @@ public class UIController : MonoBehaviour
         {
             pausePlayButt.sprite = StateSprite[0];
             Time.timeScale = 0;
+            AudioListener.pause = true;
         }
         else if (isPaused)
         {
             pausePlayButt.sprite = StateSprite[1];
             Time.timeScale = 1;
+            AudioListener.pause = false;
         }
         isPaused = !isPaused;
     }
