@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 98acb13fa734b4129a063a91c7c730f3
+guid: c1fc984248247c54b8a26f00f1c190f9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: lambert2
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Molshoop
+    4300000: pCone3
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -60,7 +60,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:

@@ -8,7 +8,7 @@ public class BeltConfig : MonoBehaviour
     public Vector3[] targetsVect = new Vector3[2];
     private Quaternion[] targetsQuat = new Quaternion[2];
     private Quaternion currentTarget;
-    public bool isLeft;
+    public bool isRight;
     public Transform endPoint;
 
     public AudioSource sound;
@@ -26,16 +26,16 @@ public class BeltConfig : MonoBehaviour
 
     public void SetTarget()
     {
-        if (isLeft)
+        if (isRight)
         {
             currentTarget = targetsQuat[1];
         }
-        else if (!isLeft)
+        else if (!isRight)
         {
             currentTarget = targetsQuat[0];
         }
 
-        isLeft = !isLeft;
+        isRight = !isRight;
     }
 
     private void OnTriggerStay(Collider other)
@@ -49,6 +49,7 @@ public class BeltConfig : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             SetTarget();
+            sound.Play();
         }
     }
 
