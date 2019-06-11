@@ -45,26 +45,13 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private GameObject world;
     [SerializeField] [Range(20, 70)] private float worldSpeed;
 
-
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
-    {
-       // StartCoroutine(StartupDelay());
-    }
-
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this);
-            basetime = spawnRate;
-            _trash.GetFirstTime(spawnRate);
-            GetTrashObjects();
-            GetObstacleObjects();
+            StartCoroutine(StartupDelay());
         }
         else
         {
@@ -92,6 +79,14 @@ public class Gamemanager : MonoBehaviour
             
         }
 
+    }
+
+    void StartGame()
+    {
+        basetime = spawnRate;
+        _trash.GetFirstTime(spawnRate);
+        GetTrashObjects();
+        GetObstacleObjects();
     }
 
     public void LifeTracking(GameObject col)
@@ -138,6 +133,7 @@ public class Gamemanager : MonoBehaviour
             {
                 var j = Random.Range(0, _trashObject.Length);
                 var obs = Instantiate(_trashObject[j], spawmLocations[i].position, Quaternion.identity);
+                obs.transform.position = spawmLocations[i].position;
                 obs.transform.SetParent(world.transform, true);
                 TrashSpawn(obs);
             }
@@ -146,6 +142,7 @@ public class Gamemanager : MonoBehaviour
                 var j = Random.Range(0, _obstacleObjects.Length);
                 var obs = Instantiate(_obstacleObjects[j], spawmLocations[i].position, Quaternion.identity * Quaternion.Euler(295, 0, 0));
                 obs.transform.SetParent(world.transform, true);
+                //obs.transform.position = spawmLocations[i].position; 
             }
 
 #if UNITY_EDITOR
@@ -217,7 +214,7 @@ public class Gamemanager : MonoBehaviour
         Time.timeScale = 1;
         countdownText.SetText("");
         UIController.instance.isPaused = false;
-        //StartGame();
+        StartGame();
         yield break;
     }
 }

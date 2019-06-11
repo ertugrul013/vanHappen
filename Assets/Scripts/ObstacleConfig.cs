@@ -12,7 +12,7 @@ public class ObstacleConfig : MonoBehaviour
    /// </summary>
    void Awake()
    {
-       transform.position = new Vector3(transform.position.x,transform.position.y + _obstacle.offsetY,transform.position.z);
+       transform.position = new Vector3(transform.position.x,transform.position.y - _obstacle.offsetY,transform.position.z);
    }
 
     private void OnCollisionEnter(Collision other)

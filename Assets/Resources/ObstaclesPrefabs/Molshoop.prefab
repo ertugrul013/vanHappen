@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5732428283925737525}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.91358, y: 3.5865154, z: 13.78241}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,4 +92,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacle:
     myType: 1
-    offsetY: -100
+    offsetY: 60
