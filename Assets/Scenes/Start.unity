@@ -320,7 +320,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &366504552
 GameObject:
@@ -393,7 +393,7 @@ RectTransform:
   - {fileID: 1776196324}
   - {fileID: 289765192}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -451,6 +451,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc36f3a54b979e4d08c60380791a0b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LifeUiElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pausePlayButt: {fileID: 0}
+  StateSprite:
+  - {fileID: 0}
+  - {fileID: 0}
+  isPaused: 0
+  scoreText: {fileID: 0}
 --- !u!4 &638031897
 Transform:
   m_ObjectHideFlags: 0
@@ -532,7 +542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1583824004
 GameObject:
@@ -598,7 +608,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661799279
 GameObject:
@@ -611,7 +621,7 @@ GameObject:
   - component: {fileID: 1661799281}
   - component: {fileID: 1661799280}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: '----AUDIO-----'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +641,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -725,7 +735,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776196323
 GameObject:

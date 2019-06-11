@@ -1,0 +1,446 @@
+fileFormatVersion: 2
+guid: 8bf1444774d23e361a52f928a50fad4e
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TrashMonsterSprite_0
+    21300002: TrashMonsterSprite_1
+    21300004: TrashMonsterSprite_2
+    21300006: TrashMonsterSprite_3
+    21300008: TrashMonsterSprite_4
+    21300010: TrashMonsterSprite_5
+    21300012: TrashMonsterSprite_6
+    21300014: TrashMonsterSprite_7
+    21300016: TrashMonsterSprite_8
+    21300018: TrashMonsterSprite_9
+    21300020: TrashMonsterSprite_10
+    21300022: TrashMonsterSprite_11
+    21300024: TrashMonsterSprite_12
+    21300026: TrashMonsterSprite_13
+    21300028: TrashMonsterSprite_14
+    21300030: TrashMonsterSprite_15
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TrashMonsterSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2224
+        width: 914
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf52aa8424daf232ac82fe880e0a785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_1
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 2236
+        width: 918
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8960eb0cf51b10421aebc8e367dfe06b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_2
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 2236
+        width: 919
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7a4b68925761fac9da634f12b12153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_3
+      rect:
+        serializedVersion: 2
+        x: 2868
+        y: 2237
+        width: 972
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5897ab61649f91a049fe20b468e3c6ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1503
+        width: 918
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f940fdb2b6b19cee9a539e2bcf5befd3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_5
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 1504
+        width: 918
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025b6dee2d9f2684a8dc9d3b85fd04b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_6
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 1501
+        width: 919
+        height: 693
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa1460221bd79f77bcff520bf9589f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_7
+      rect:
+        serializedVersion: 2
+        x: 2870
+        y: 1504
+        width: 970
+        height: 694
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95d92f732ed7aeb48532e3424be80ef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 753
+        width: 914
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c5cbfc325da6f4f91807d188b2b94a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_9
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 0
+        width: 900
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6bbe98d29a1309d8eb4d904131e647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_10
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 753
+        width: 912
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12706e0a1daa38dbab94d011cfe0ff51
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_11
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 751
+        width: 907
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cd0b5882b35c523b0e8fe5ebd8d93b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_12
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 0
+        width: 952
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c7dc0be5d0ddcbe899fb52ab0101a7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_13
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 753
+        width: 952
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ee6e1afa0b505f8a63dac27c662c6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 891
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14583c04e35cb9893bcb2cdd25d03f81
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrashMonsterSprite_15
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 0
+        width: 907
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a66444305e2b20280eb5ac68df24a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8dd4ecc65180790b49257bc530e1f1db
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
