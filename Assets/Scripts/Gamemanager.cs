@@ -17,10 +17,10 @@ public class Gamemanager : MonoBehaviour
     private readonly Trash _trash = new Trash();
 
     //keeps track of all the different objects that can been spawn
-    private readonly Dictionary<Guid, GameObject> trashObjects = new Dictionary<Guid, GameObject>();
+    private Dictionary<Guid, GameObject> trashObjects = new Dictionary<Guid, GameObject>();
 
     //the queue of witch the trash has come in
-    private readonly Queue<Trash> TrashQueue = new Queue<Trash>();
+    private Queue<Trash> TrashQueue = new Queue<Trash>();
 
     //Player settings
     private int _currentLives = 3;
@@ -52,10 +52,10 @@ public class Gamemanager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        StartCoroutine(StartupDelay());
+       // StartCoroutine(StartupDelay());
     }
 
-    private void StartGame()
+    private void Awake()
     {
         if (instance == null)
         {
@@ -76,6 +76,7 @@ public class Gamemanager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            Debug.Log(TrashQueue.Count);
             SpawnBasedOnTime();
         }
         else
@@ -114,7 +115,8 @@ public class Gamemanager : MonoBehaviour
         TrashQueue.Enqueue(x);
         _score += x.amountOfScore;
         UIController.instance.setScoreText(_score);
-        Destroy(t);
+        t.SetActive(false);
+        Debug.Log(TrashQueue.Count);
     }
 
     private void WorldSpinning()
@@ -215,7 +217,7 @@ public class Gamemanager : MonoBehaviour
         Time.timeScale = 1;
         countdownText.SetText("");
         UIController.instance.isPaused = false;
-        StartGame();
+        //StartGame();
         yield break;
     }
 }

@@ -25,80 +25,39 @@ public class PipeController : MonoBehaviour
         GetInput();
     }
 
-
     private void GetInput()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            _beltConfigs[(int)currentSelectedBelt].sound.Play();
-            if (currentSelectedBelt == TypeOfBelts.Top)
-            {
-                _beltConfigs[(int)currentSelectedBelt].target = Pos1Top;
-                return;
-            }
-
-            _beltConfigs[(int)currentSelectedBelt].target = Pos1;
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            _beltConfigs[(int)currentSelectedBelt].sound.Play();
-            if (currentSelectedBelt == TypeOfBelts.Top)
-            {
-                _beltConfigs[(int)currentSelectedBelt].target = Pos2Top;
-                return;
-            }
-
-            _beltConfigs[(int)currentSelectedBelt].target = Pos2;
-        }
-
-		#if PLATFORM_ANDROID
-        /// checks if screeen is being touched and if the touch pos has moved
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        /*
+        if (Input.GetAxis("Fire1")!=0)
         {   
-            var deltaPosition = Input.GetTouch(0).deltaPosition;
+            RaycastHit hit;
 
-            if (deltaPosition.x > swipeThreshold)
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                _beltConfigs[(int)currentSelectedBelt].sound.Play();
-                if (currentSelectedBelt == TypeOfBelts.Top)
+                if (hit.collider.gameObject.CompareTag("belt"))
                 {
-                    _beltConfigs[(int)currentSelectedBelt].target = Pos2Top;
-                    return;
+                     hit.collider.gameObject.GetComponent<BeltConfig>().SetTarget();
                 }
-
-                _beltConfigs[(int)currentSelectedBelt].target = Pos2;
             }
 
-            else if (deltaPosition.x < swipeThreshold)
-            {
-                _beltConfigs[(int)currentSelectedBelt].sound.Play();
-                if (currentSelectedBelt == TypeOfBelts.Top)
-                {
-                    _beltConfigs[(int)currentSelectedBelt].target = Pos1Top;
-                    return;
-                }
+            
+        }
+        */
+    }
 
-                _beltConfigs[(int)currentSelectedBelt].target = Pos1;
-            }
-        }
-		#endif
-	}
-        public void SetBelt(int _enum)
-        {
-            currentSelectedBelt = (TypeOfBelts)_enum;
-        }
-
-        private void GetBeltPos()
-        {
-            var a = new Vector3(0, 11, 0);
-            var b = new Vector3(0, -11, 0);
-            var c = new Vector3(0, 20, 0);
-            var d = new Vector3(0, -20, 0);
-            Pos1 = Quaternion.Euler(a);
-            Pos2 = Quaternion.Euler(b);
-            Pos1Top = Quaternion.Euler(c);
-            Pos2Top = Quaternion.Euler(d);
-        }
+    private void GetBeltPos()
+    {
+        var a = new Vector3(0, 11, 0);
+        var b = new Vector3(0, -11, 0);
+        var c = new Vector3(0, 20, 0);
+        var d = new Vector3(0, -20, 0);
+        Pos1 = Quaternion.Euler(a);
+        Pos2 = Quaternion.Euler(b);
+        Pos1Top = Quaternion.Euler(c);
+        Pos2Top = Quaternion.Euler(d);
+    }
 
 
     private enum TypeOfBelts
