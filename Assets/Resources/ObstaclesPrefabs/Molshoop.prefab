@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5732428283928669237}
   - component: {fileID: 5732428283927670517}
   - component: {fileID: 7640694092989950872}
+  - component: {fileID: 4940064876628777343}
   m_Layer: 0
   m_Name: Molshoop
   m_TagString: obstacle
@@ -93,3 +94,16 @@ MonoBehaviour:
   _obstacle:
     myType: 1
     offsetY: 7
+--- !u!65 &4940064876628777343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732428283925737525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.977832, y: 2.968628, z: 5.9480186}
+  m_Center: {x: 0, y: 0.000001847744, z: 0}
