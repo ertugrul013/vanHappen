@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	[Header("Movement")]
+    [Header("Movement")]
     [SerializeField] private Vector3[] _lanePos = new Vector3[3];
     private Vector3 _target;
     [SerializeField] private Lanes currentLane = Lanes.Middel;
     [SerializeField] private float swipeThreshold;
-	
-	[Space]
-	[Header("audio")]
-	[SerializeField] private AudioSource PickupSound;
+
+    [Space]
+    [Header("audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] sounds;
 
     private void Start()
     {
@@ -101,12 +102,17 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("obstacle"))
+        {
             Gamemanager.instance.LifeTracking(col.gameObject);
+            audioSource.clip = sounds[1o];
+            audioSource.Play();
+        }
         else if (col.gameObject.CompareTag("pickup"))
         {
             Gamemanager.instance.AddTrash(col.gameObject);
-			PickupSound.Play();
-		}
+            audioSource.clip = sounds[0];
+            audioSource.Play();
+        }
     }
 
     private enum Lanes
