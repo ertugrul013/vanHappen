@@ -8,6 +8,10 @@ TagManager:
   - pickup
   - wall
   - belt
+  - green
+  - plastic
+  - chemicals
+  - paper
   layers:
   - Default
   - TransparentFX

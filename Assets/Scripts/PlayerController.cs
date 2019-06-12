@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("obstacle"))
         {
             Gamemanager.instance.LifeTracking(col.gameObject);
-            audioSource.clip = sounds[1o];
+            audioSource.clip = sounds[1];
             audioSource.Play();
         }
         else if (col.gameObject.CompareTag("pickup"))

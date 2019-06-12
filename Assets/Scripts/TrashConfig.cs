@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrashConfig : MonoBehaviour
 {
@@ -34,6 +35,21 @@ public class TrashConfig : MonoBehaviour
         if (other.gameObject.CompareTag("wall"))
         {
             Destroy(this.gameObject);
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            if (other.gameObject.CompareTag(_trash.mytype.ToString()))
+            {
+                Gamemanager.instance._score += _trash.amountOfScore;
+                UIController.instance.setScoreText(Gamemanager.instance._score);
+                Destroy(this.gameObject);
+            }
+            if (other.gameObject.CompareTag("wall"))
+            {
+                Gamemanager.instance._currentLives--;
+                UIController.instance.SetLifeUI(Gamemanager.instance._currentLives);
+                Destroy(this.gameObject);
+            }
         }
     }
 }

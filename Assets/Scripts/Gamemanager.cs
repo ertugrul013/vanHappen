@@ -23,8 +23,8 @@ public class Gamemanager : MonoBehaviour
     private Queue<Trash> TrashQueue = new Queue<Trash>();
 
     //Player settings
-    private int _currentLives = 3;
-    private int _score;
+    public int _currentLives = 3;
+    public int _score;
 
     private GameObject[] _obstacleObjects;
     private float _sceneSwitchTime;
@@ -45,6 +45,9 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private GameObject world;
     [SerializeField] [Range(20, 70)] private float worldSpeed;
 
+    [Header("game2")]
+    public Transform spawnpoint;
+
     private void Awake()
     {
         if (instance == null)
@@ -64,7 +67,17 @@ public class Gamemanager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             Debug.Log(TrashQueue.Count);
-            SpawnBasedOnTime();
+            //SpawnBasedOnTime();
+            if (spawnpoint == null)
+            {
+                spawnpoint = GameObject.Find("spawnpos").transform;
+                basetime = 5f;
+                UIController.instance.setScoreText(Gamemanager.instance._score);
+                _currentLives = 3;
+                UIController.instance.SetLifeUI(_currentLives);
+            }
+            Debug.Log("spawning");
+            TempSpawn();
         }
         else
         {
@@ -76,7 +89,7 @@ public class Gamemanager : MonoBehaviour
             {
                 basetime -= Time.deltaTime / 25;
             }
-            
+
         }
 
     }
@@ -195,6 +208,23 @@ public class Gamemanager : MonoBehaviour
             GameObject i;
             i = Instantiate(curTrashObject, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
             i.AddComponent<Rigidbody>().useGravity = true;
+        }
+    }
+
+    private void TempSpawn()
+    {
+        spawnRate -= 1 * Time.deltaTime;
+        Debug.Log(spawnRate);
+        if (spawnRate <= 0)
+        {
+            Debug.Log("spawned");
+            var j = Random.Range(0, _trashObject.Length);
+            var obs = Instantiate(_trashObject[j], spawnpoint.position, Quaternion.identity);
+            obs.transform.localScale = new Vector3(0.08f,0.08f,0.08f);
+            obs.AddComponent<Rigidbody>().freezeRotation = true;
+            obs.GetComponent<BoxCollider>().enabled = false;
+            obs.AddComponent<SphereCollider>();
+            spawnRate += basetime;
         }
     }
 
