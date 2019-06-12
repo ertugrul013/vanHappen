@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7640694092989950872}
   m_Layer: 0
   m_Name: Molshoop
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,4 +92,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacle:
     myType: 1
-    offsetY: 60
+    offsetY: 7

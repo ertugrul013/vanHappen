@@ -106,4 +106,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacle:
     myType: 0
-    offsetY: 1.05
+    offsetY: 0

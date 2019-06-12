@@ -358,11 +358,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lanePos:
-  - {x: 17, y: 28.29, z: 58.61}
-  - {x: 11, y: 28.29, z: 58.61}
-  - {x: 4, y: 28.29, z: 58.61}
+  - {x: 17, y: 31.72, z: 55.26}
+  - {x: 10, y: 31.72, z: 55.26}
+  - {x: 3, y: 31.72, z: 55.26}
   currentLane: 1
-  swipeThreshold: 5
+  swipeThreshold: 3
   PickupSound: {fileID: 5028408652564129146}
 --- !u!82 &5028408652564129146
 AudioSource:
