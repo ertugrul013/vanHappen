@@ -1,18 +1,16 @@
 fileFormatVersion: 2
-guid: 99016a4f0aa24615e8b4831c2071de6c
+guid: bc41823ca8844fad88da946e501bd0b4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: UI_Game_01_0
-    21300002: UI_Game_01_1
-    21300004: UI_Game_01_2
-    21300006: UI_Game_01_3
-    21300008: UI_Game_01_4
-    21300010: UI_Game_01_5
-    21300012: UI_Game_01_6
-    21300014: UI_Game_01_7
-    21300016: UI_Game_01_8
-    21300018: UI_Game_01_9
-    21300020: UI_Game_01_10
+    21300000: Swipe_0
+    21300002: Swipe_1
+    21300004: Swipe_2
+    21300006: Swipe_3
+    21300008: Swipe_4
+    21300010: Swipe_5
+    21300012: Swipe_6
+    21300014: Swipe_7
+    21300016: Swipe_8
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -71,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,10 +80,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,10 +91,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,153 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Game_01_0
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 2221
-        width: 943
-        height: 328
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ed8a2322e01e2bbb8bb878d533d4f24
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_1
-      rect:
-        serializedVersion: 2
-        x: 1049
-        y: 2263
-        width: 282
-        height: 264
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2b36c5317494aefd8ccd13e0e6c4970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_2
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 2281
-        width: 294
-        height: 268
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5abf830641a259d5856424d7aa16257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_3
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 2281
-        width: 294
-        height: 268
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 333250b048be1174ea2aae0b6b56c55f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_4
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 1847
-        width: 943
-        height: 328
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59cd267d63047ef16ba69fafa01de9ce
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_5
-      rect:
-        serializedVersion: 2
-        x: 1007
-        y: 1764
-        width: 475
-        height: 411
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87e39dd250d2a180aae5389315ecf832
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_6
-      rect:
-        serializedVersion: 2
-        x: 1587
-        y: 1764
-        width: 475
-        height: 431
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ae1147ce417aee17b80dbd37d4bd106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_7
+      name: Swipe_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1372
-        width: 708
-        height: 392
+        y: 48
+        width: 475
+        height: 445
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,19 +118,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c52266faff65b42e1b400673645b65ab
+      spriteID: 4ae138c1cd5166835b6cc9f116f7c4d4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_Game_01_8
+      name: Swipe_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 523
-        width: 1910
-        height: 778
+        x: 541
+        y: 48
+        width: 466
+        height: 445
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,19 +138,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2941cb4245248fc96be9c8ba482ff74a
+      spriteID: 25e3e394c5a0ef148b1caa8bb3613369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_Game_01_9
+      name: Swipe_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2160
-        height: 387
+        x: 1087
+        y: 48
+        width: 451
+        height: 445
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,7 +158,127 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1a73a06fbe771e35aa25a1f70d051aa
+      spriteID: 106674e2f752a5f9da497117a76db9f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swipe_3
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 48
+        width: 428
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0c9fa6b1166c4229b29b9e99810384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swipe_4
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 48
+        width: 378
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f1a6ce6a573bbf9b6347bde9908431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swipe_5
+      rect:
+        serializedVersion: 2
+        x: 2760
+        y: 48
+        width: 362
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ac26fa6248c1fc282a7a5b15940f6e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swipe_6
+      rect:
+        serializedVersion: 2
+        x: 3290
+        y: 48
+        width: 432
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424ea7f59566c6474a9675cfefd09889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swipe_7
+      rect:
+        serializedVersion: 2
+        x: 3823
+        y: 48
+        width: 432
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f018a5013f373170cb22c4046b13a709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swipe_8
+      rect:
+        serializedVersion: 2
+        x: 4355
+        y: 48
+        width: 429
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f488ce45ac5ecf8cba76489ecac0238a
       vertices: []
       indices: 
       edges: []
@@ -308,7 +286,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 78aec0d1252d16b0cadd4491a1a2a0a5
+    spriteID: 40f85045121c8c26ca96294bf90c6846
     vertices: []
     indices: 
     edges: []

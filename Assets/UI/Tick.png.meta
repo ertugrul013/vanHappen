@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 99016a4f0aa24615e8b4831c2071de6c
+guid: 3ea7008c17bc8c0bd83104b193c03ed3
 TextureImporter:
   fileIDToRecycleName:
-    21300000: UI_Game_01_0
-    21300002: UI_Game_01_1
-    21300004: UI_Game_01_2
-    21300006: UI_Game_01_3
-    21300008: UI_Game_01_4
-    21300010: UI_Game_01_5
-    21300012: UI_Game_01_6
-    21300014: UI_Game_01_7
-    21300016: UI_Game_01_8
-    21300018: UI_Game_01_9
-    21300020: UI_Game_01_10
+    21300000: Tick_0
+    21300002: Tick_1
+    21300004: Tick_2
+    21300006: Tick_3
+    21300008: Tick_4
+    21300010: Tick_5
+    21300012: Tick_6
+    21300014: Tick_7
+    21300016: Tick_8
+    21300018: Tick_9
+    21300020: Tick_10
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -71,10 +71,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,10 +82,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,10 +93,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,193 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Game_01_0
+      name: Tick_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 2221
-        width: 943
-        height: 328
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ed8a2322e01e2bbb8bb878d533d4f24
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_1
-      rect:
-        serializedVersion: 2
-        x: 1049
-        y: 2263
-        width: 282
-        height: 264
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2b36c5317494aefd8ccd13e0e6c4970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_2
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 2281
-        width: 294
-        height: 268
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5abf830641a259d5856424d7aa16257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_3
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 2281
-        width: 294
-        height: 268
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 333250b048be1174ea2aae0b6b56c55f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_4
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 1847
-        width: 943
-        height: 328
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59cd267d63047ef16ba69fafa01de9ce
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_5
-      rect:
-        serializedVersion: 2
-        x: 1007
-        y: 1764
-        width: 475
-        height: 411
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87e39dd250d2a180aae5389315ecf832
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_6
-      rect:
-        serializedVersion: 2
-        x: 1587
-        y: 1764
-        width: 475
-        height: 431
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ae1147ce417aee17b80dbd37d4bd106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1372
-        width: 708
-        height: 392
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c52266faff65b42e1b400673645b65ab
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_8
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 523
-        width: 1910
-        height: 778
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2941cb4245248fc96be9c8ba482ff74a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Game_01_9
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 216
         y: 0
-        width: 2160
-        height: 387
+        width: 543
+        height: 977
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,7 +120,207 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1a73a06fbe771e35aa25a1f70d051aa
+      spriteID: 096ed634cbb606677b0ac8297c5f4301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_1
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 0
+        width: 538
+        height: 977
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738c14c388979094683e57eb283a8590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_2
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 51
+        width: 542
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2da6b32392da9329293d829b06b54e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_3
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 51
+        width: 544
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e732bc98ccf6f79d3b13c8d63dacde25
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_4
+      rect:
+        serializedVersion: 2
+        x: 4238
+        y: 51
+        width: 542
+        height: 821
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323cde28dbddec0aeb765cca76b92409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_5
+      rect:
+        serializedVersion: 2
+        x: 5243
+        y: 51
+        width: 538
+        height: 907
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796aa5c749fbfaaa8a3c6dd265cfbc9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_6
+      rect:
+        serializedVersion: 2
+        x: 6244
+        y: 51
+        width: 543
+        height: 907
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e99c000c65d887d6b38cdc47bfe30ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_7
+      rect:
+        serializedVersion: 2
+        x: 7245
+        y: 51
+        width: 543
+        height: 907
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b294aed5bf161f4290eb77ed55d0a24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_8
+      rect:
+        serializedVersion: 2
+        x: 8246
+        y: 0
+        width: 543
+        height: 977
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eebb68bce5ff7741a4fe3f76acc07b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_9
+      rect:
+        serializedVersion: 2
+        x: 9252
+        y: 0
+        width: 538
+        height: 977
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81f90ed53fa16664a0c67ee0b43ed35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tick_10
+      rect:
+        serializedVersion: 2
+        x: 10252
+        y: 0
+        width: 543
+        height: 977
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd22ac2c4b529b9a787a691f1767f435
       vertices: []
       indices: 
       edges: []
@@ -308,7 +328,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 78aec0d1252d16b0cadd4491a1a2a0a5
+    spriteID: 5cbb430fcfd57df8a8d92e0fc1d92d61
     vertices: []
     indices: 
     edges: []
