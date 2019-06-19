@@ -38,18 +38,37 @@ public class TrashConfig : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            if (other.gameObject.CompareTag(_trash.mytype.ToString()))
+            var tag = other.gameObject.tag;
+            if (other.gameObject.layer == 9)
             {
-                Gamemanager.instance._score += _trash.amountOfScore;
-                UIController.instance.setScoreText(Gamemanager.instance._score);
-                Destroy(this.gameObject);
+                if (tag == _trash.mytype.ToString())
+                {
+                    /*
+                    if (_trash.mytype == Trash.Type.chemicals)
+                    {
+                        Gamemanager.instance.powerUpManager.PowerUpHandeler(this.gameObject.GetComponent<TrashConfig>());
+                    }
+                    */
+                    Gamemanager.instance._score += _trash.amountOfScore;
+                    UIController.instance.setScoreText(Gamemanager.instance._score);
+                    Destroy(this.gameObject);
+                }
+                else
+                {
+                    Gamemanager.instance.CurrentLives--;
+                    UIController.instance.SetLifeUI(Gamemanager.instance.CurrentLives);
+                    Destroy(this.gameObject);
+                }
             }
+
             if (other.gameObject.CompareTag("wall"))
             {
-                Gamemanager.instance._currentLives--;
-                UIController.instance.SetLifeUI(Gamemanager.instance._currentLives);
+                Gamemanager.instance.CurrentLives--;
+                UIController.instance.SetLifeUI(Gamemanager.instance.CurrentLives);
                 Destroy(this.gameObject);
             }
+
         }
+
     }
 }

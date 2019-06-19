@@ -7,6 +7,9 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance;
 
+    [Header("Count down text")]
+    public TextMeshProUGUI countdownText;
+
     [Header("Life images")]
     [SerializeField] private Image[] LifeUiElements = new Image[3];
 
@@ -20,23 +23,29 @@ public class UIController : MonoBehaviour
     [Header("Score control")]
     [SerializeField] private TextMeshProUGUI scoreText;
 
+    [Space]
+    public Image tutorialImage;    
     /// <summary>
-    /// Awake is called when the script instance is being loaded.
+    /// When the script instance is being loaded it checks if the instance is <see langword="null"/>
     /// </summary>
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     /// <summary>
     /// switches scene to the index corresponding to the build settings
     /// </summary>
     /// <param name="index">build settings corresponding to the index of the scene you wan't to switch to</param>
-    public void LoadScene(int index) => SceneManager.LoadScene(index);
+    public void LoadScene(int index) => SceneManager.LoadSceneAsync(index);
 
-    /// <TO-DO>
-    /// Check with Elysa(main 2D artist) if the health icons can be reduced to
-    /// show 2 health for better understanding that there are only 2 lives. 
     /// <summary>
     /// Sets the UI lives according to the current amount of lives left
     /// </summary>
@@ -69,5 +78,19 @@ public class UIController : MonoBehaviour
     /// <param name="score">score to add</param>
     public void setScoreText(int score) => scoreText.SetText("score:\n {0}", score);
 
+    /// <summary>
+    /// Used to exit the game
+    /// </summary>
     public void ExitGame() => Application.Quit();
+
+    /// <summary>
+    /// Can be used to play spriteSheet animation
+    /// </summary>
+    /// <param name="textures">The textures of the sprite sheet</param>
+    /// <param name="framePP">how many frames per second</param>
+    public Sprite playAnimtion(Sprite[] textures, float framePP)
+    {
+        int index = (int)(Time.unscaledTime * framePP) % textures.Length;
+        return textures[index];
+    }
 }

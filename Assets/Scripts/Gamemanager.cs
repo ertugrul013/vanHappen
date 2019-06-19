@@ -1,20 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-using TMPro;
 
 public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager instance;
 
-    [SerializeField] private TextMeshProUGUI countdownText;
-
+    [Header("PowerUp")]
+    public PowerUpManager powerUpManager = new PowerUpManager();
     //Spawning
-    private readonly Trash _trash = new Trash();
+    private Trash _trash = new Trash();
 
     //keeps track of all the different objects that can been spawn
     private Dictionary<Guid, GameObject> trashObjects = new Dictionary<Guid, GameObject>();
@@ -22,19 +20,22 @@ public class Gamemanager : MonoBehaviour
     //the queue of witch the trash has come in
     private Queue<Trash> TrashQueue = new Queue<Trash>();
 
-    //Player settings
-    public int _currentLives = 3;
+    [Header("Player settings")]
+    public int CurrentLives = 3;
     public int _score;
+    public bool firstSwipe;
 
     private GameObject[] _obstacleObjects;
     private float _sceneSwitchTime;
 
     //trash objects to spawn
-    private GameObject[] _trashObject;
+    public GameObject[] _trashObject;
     private float basetime;
 
     //obstacle objects to spawn
 
+    [Space]
+    [Header("Spawn Settings")]
     [SerializeField] private int chanceToSpawn;
 
     [SerializeField] private Transform[] spawmLocations = new Transform[3];
@@ -42,11 +43,17 @@ public class Gamemanager : MonoBehaviour
     [Tooltip("time in seconds")] public float spawnRate;
 
     //World settings
-    [SerializeField] private GameObject world;
+    public GameObject world;
     [SerializeField] [Range(20, 70)] private float worldSpeed;
 
+    [Space]
+    [Header("Tutorial")]
+    public float animPlaySpeed;
+    [SerializeField] private Sprite[] SwipeTutorial;
+    [SerializeField] private Sprite[] TickTutorial;
+
     [Header("game2")]
-    public Transform spawnpoint;
+    [SerializeField] public Transform spawnpoint;
 
     private void Awake()
     {
@@ -62,22 +69,34 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        PlayTutorialImages();
+    }
+
+
     private void FixedUpdate()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex != 1)
         {
-            Debug.Log(TrashQueue.Count);
-            //SpawnBasedOnTime();
             if (spawnpoint == null)
             {
                 spawnpoint = GameObject.Find("spawnpos").transform;
                 basetime = 5f;
                 UIController.instance.setScoreText(Gamemanager.instance._score);
-                _currentLives = 3;
-                UIController.instance.SetLifeUI(_currentLives);
+                CurrentLives = 3;
+                powerUpManager.FactoryTrash = PipeController.instance.trashPile;
+            }
+            if (CurrentLives <= 0)
+            {
+                Destroy(this.gameObject);
+                SceneManager.LoadScene(3);
             }
             Debug.Log("spawning");
-            TempSpawn();
+            RandomSpawn();
         }
         else
         {
@@ -89,9 +108,7 @@ public class Gamemanager : MonoBehaviour
             {
                 basetime -= Time.deltaTime / 25;
             }
-
         }
-
     }
 
     void StartGame()
@@ -104,13 +121,14 @@ public class Gamemanager : MonoBehaviour
 
     public void LifeTracking(GameObject col)
     {
-        _currentLives--;
+        CurrentLives--;
         Destroy(col);
-        UIController.instance.SetLifeUI(_currentLives);
-        if (_currentLives == 0)
+        UIController.instance.SetLifeUI(CurrentLives);
+        if (CurrentLives == 0)
         {
             SceneManager.LoadScene(2);
             _sceneSwitchTime = Time.time;
+            firstSwipe = false;
         }
     }
 
@@ -118,11 +136,14 @@ public class Gamemanager : MonoBehaviour
 
     public void AddTrash(GameObject t)
     {
-        var x = t.GetComponent<TrashConfig>()._trash;
-        x.SetTime();
-        TrashQueue.Enqueue(x);
-        _score += x.amountOfScore;
+        var x = t.GetComponent<TrashConfig>();
+        x._trash.SetTime();
+        TrashQueue.Enqueue(x._trash);
+        //score setting
+        _score += x._trash.amountOfScore;
         UIController.instance.setScoreText(_score);
+        //powerUp
+        powerUpManager.PowerUpHandeler(x);
         t.SetActive(false);
         Debug.Log(TrashQueue.Count);
     }
@@ -132,6 +153,7 @@ public class Gamemanager : MonoBehaviour
         world.transform.Rotate(0, worldSpeed * Time.deltaTime, 0, Space.Self);
     }
 
+    #region objectSpawning
 
     private void SpawnObstacles()
     {
@@ -146,7 +168,7 @@ public class Gamemanager : MonoBehaviour
             {
                 var j = Random.Range(0, _trashObject.Length);
                 var obs = Instantiate(_trashObject[j], spawmLocations[i].position, Quaternion.identity);
-                obs.transform.position = spawmLocations[i].position;
+                //obs.transform.position = spawmLocations[i].position;
                 obs.transform.SetParent(world.transform, true);
                 TrashSpawn(obs);
             }
@@ -155,14 +177,12 @@ public class Gamemanager : MonoBehaviour
                 var j = Random.Range(0, _obstacleObjects.Length);
                 var obs = Instantiate(_obstacleObjects[j], spawmLocations[i].position, Quaternion.identity * Quaternion.Euler(295, 0, 0));
                 obs.transform.SetParent(world.transform, true);
-                //obs.transform.position = spawmLocations[i].position; 
             }
 
 #if UNITY_EDITOR
             else
             {
                 Debug.LogError("Object index out of range");
-                //EditorApplication.isPlaying = false;
             }
 #endif
             spawnRate += basetime;
@@ -211,38 +231,67 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
-    private void TempSpawn()
+    /// <summary>
+    /// Spawns the trash objects randomly !only in the second game
+    /// </summary>
+    private void RandomSpawn()
     {
         spawnRate -= 1 * Time.deltaTime;
-        Debug.Log(spawnRate);
+        //Debug.Log(spawnRate);
         if (spawnRate <= 0)
         {
             Debug.Log("spawned");
+            //spawning of the trash object
             var j = Random.Range(0, _trashObject.Length);
+            Debug.Log(j);
             var obs = Instantiate(_trashObject[j], spawnpoint.position, Quaternion.identity);
-            obs.transform.localScale = new Vector3(0.08f,0.08f,0.08f);
+
+            //settings adjusment for the needed components
+            obs.transform.localScale = new Vector3(0.08f, 0.08f, 0.08f);
             obs.AddComponent<Rigidbody>().freezeRotation = true;
             obs.GetComponent<BoxCollider>().enabled = false;
             obs.AddComponent<SphereCollider>();
+
+            //reset timer
             spawnRate += basetime;
         }
     }
+    #endregion
 
+    private void PlayTutorialImages()
+    {
+        if (!firstSwipe)
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                UIController.instance.tutorialImage.sprite = UIController.instance.playAnimtion(SwipeTutorial, animPlaySpeed);
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                Debug.Log("tutoriol playing");
+                UIController.instance.tutorialImage.sprite = UIController.instance.playAnimtion(TickTutorial, animPlaySpeed);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Delays the startup
+    /// </summary>
+    /// <returns><see langword="null"/></returns>
     IEnumerator StartupDelay()
     {
         Time.timeScale = 0;
         UIController.instance.isPaused = true;
-        var timer = 4f;
+        var timer = 3f;
         float pauseTime = Time.realtimeSinceStartup + timer;
         while (Time.realtimeSinceStartup < pauseTime)
         {
             yield return new WaitForSecondsRealtime(1f);
             timer--;
-            countdownText.SetText(timer.ToString());
-
+            UIController.instance.countdownText.SetText(timer.ToString());
         }
         Time.timeScale = 1;
-        countdownText.SetText("");
+        UIController.instance.countdownText.SetText("");
         UIController.instance.isPaused = false;
         StartGame();
         yield break;

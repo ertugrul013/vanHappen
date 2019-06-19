@@ -6,7 +6,8 @@ public class Obstacle
     public enum Type
     {
         Bin,
-        MoleHill
+        MoleHill,
+        TrashMonster
     }
 
     public Type myType;

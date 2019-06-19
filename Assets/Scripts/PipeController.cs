@@ -2,6 +2,9 @@
 
 public class PipeController : MonoBehaviour
 {
+    public static PipeController instance;
+
+    public GameObject[] trashPile;
     [SerializeField] private int swipeThreshold;
 
     // 0 = top
@@ -15,36 +18,9 @@ public class PipeController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        instance = this;
         currentSelectedBelt = TypeOfBelts.Top;
         GetBeltPos();
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        GetInput();
-    }
-
-    private void GetInput()
-    {
-        /*
-        if (Input.GetAxis("Fire1")!=0)
-        {   
-            RaycastHit hit;
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-            {
-                if (hit.collider.gameObject.CompareTag("belt"))
-                {
-                     hit.collider.gameObject.GetComponent<BeltConfig>().SetTarget();
-                }
-            }
-
-            
-        }
-        */
     }
 
     private void GetBeltPos()

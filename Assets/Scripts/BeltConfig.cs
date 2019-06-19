@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BeltConfig : MonoBehaviour
 {
@@ -26,6 +25,8 @@ public class BeltConfig : MonoBehaviour
 
     public void SetTarget()
     {
+        Gamemanager.instance.firstSwipe = true;
+        UIController.instance.tutorialImage.enabled = false;
         if (isRight)
         {
             currentTarget = targetsQuat[1];

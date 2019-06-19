@@ -309,7 +309,7 @@ Transform:
   m_GameObject: {fileID: 1154551636862194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.4357204, y: 2.4887977, z: -31.69693}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 4220675096069142}
   - {fileID: 4925959760960202}
@@ -330,7 +330,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1657698562
 BoxCollider:
@@ -343,8 +343,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9251165, y: 8.318884, z: 2.8039703}
-  m_Center: {x: -0.07293129, y: -0.7856016, z: -0.5342865}
+  m_Size: {x: 1.9251165, y: 6.0113173, z: 2.8039706}
+  m_Center: {x: -0.07293133, y: 0.36818138, z: -0.5342865}
 --- !u!114 &1657698564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,13 +357,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bad74e60fb541bebaa95db929261ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 3070949711996351345, guid: 3ae8ef23458dc988bad57ca6e68bdb5d, type: 3}
+  bulletHole: {fileID: 6085801132672346564}
+  bulletCount: 0
   _lanePos:
   - {x: 17, y: 31.72, z: 55.26}
   - {x: 10, y: 31.72, z: 55.26}
   - {x: 3, y: 31.72, z: 55.26}
   currentLane: 1
   swipeThreshold: 3
-  PickupSound: {fileID: 5028408652564129146}
+  audioSource: {fileID: 5028408652564129146}
+  sounds:
+  - {fileID: 8300000, guid: 4048984ddf814f58baff0306d157df8e, type: 3}
+  - {fileID: 8300000, guid: e321dbe40dd831a7ab5c249fe98e61b6, type: 3}
 --- !u!82 &5028408652564129146
 AudioSource:
   m_ObjectHideFlags: 0
@@ -490,7 +496,7 @@ Transform:
   - {fileID: 4424197847638352}
   - {fileID: 4665107544334462}
   m_Father: {fileID: 4925959760960202}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1199953343668480
 GameObject:
@@ -736,7 +742,7 @@ Transform:
   m_LocalScale: {x: 100.00002, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 4925959760960202}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &137101303314470096
 SkinnedMeshRenderer:
@@ -1377,6 +1383,7 @@ Transform:
   m_LocalPosition: {x: 0.0042796135, y: -2.6097822, z: -1.02314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6085801132672346564}
   - {fileID: 4550970752185538}
   - {fileID: 4826641498489178}
   m_Father: {fileID: 4657370271103114}
@@ -2091,3 +2098,33 @@ Transform:
   m_Father: {fileID: 4468721621174368}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &558567869866990602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6085801132672346564}
+  m_Layer: 0
+  m_Name: WeaponHole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6085801132672346564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558567869866990602}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0.18, y: -0.19, z: 4.97}
+  m_LocalScale: {x: 132.47694, y: 132.47688, z: 132.47688}
+  m_Children: []
+  m_Father: {fileID: 4925959760960202}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 180}
