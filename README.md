@@ -1,4 +1,6 @@
 # Van Happen Containers 
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fertugrul013%2FvanHappen.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fertugrul013%2FvanHappen?ref=badge_shield)
+
 
 We are making this project for the Van Happen Containers company in Eindhoven.
 They want a game that draws the attention of young people between the ages of 8 and 14 to the importance of recycling.
@@ -70,3 +72,6 @@ If you separate too much waste into the wrong bin, it will be hidden and you wil
 - [ ] Particle System.
 - [ ] Refractoring first pass.
 - [ ] Refractoring second pass.
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fertugrul013%2FvanHappen.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fertugrul013%2FvanHappen?ref=badge_large)
